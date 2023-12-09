@@ -2898,7 +2898,6 @@ for country in countries_data:
 print('The total number of languages is ',len(list_of_languages))
 
 # 2
-
 set_of_languages = set(list_of_languages)  # Converting it to set so that I can easily check the count of each distinct language
 dict_of_languages = {}  # Creating a new dictionary to collect each language with its count
 for lang in set_of_languages:  # Looping through the set
