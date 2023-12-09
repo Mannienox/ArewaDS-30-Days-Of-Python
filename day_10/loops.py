@@ -2898,7 +2898,7 @@ for country in countries_data:
 print('The total number of languages is ',len(list_of_languages))
 
 # 2
-<<<<<<< HEAD
+
 set_of_languages = set(list_of_languages)  # Converting it to set so that I can easily check the count of each distinct language
 dict_of_languages = {}  # Creating a new dictionary to collect each language with its count
 for lang in set_of_languages:  # Looping through the set
@@ -2916,27 +2916,12 @@ top_ten_languages = dict((list_of_languages[:10]))
 print('\nThe top ten most spoken languages in descending order are:')
 for count, language in top_ten_languages.items():
     print(f'{language}\t\t\t{count}')
-=======
-set_of_languages = set(list_of_languages)       #Converting it to set so that I can easily check the count of each distinct language
-dict_of_languages = {}      #Creating a new dictionary to collect each language with its count
-for lang in set_of_languages:       #Looping through the set
-    dict_of_languages[list_of_languages.count(lang)] = lang     #adding to dictionary of languages
-list_of_languages = sorted(dict_of_languages.items(), reverse=True)     #The sorted function already converts the elmeents of the dictionary to a list of tuples
-top_ten_languages = dict((list_of_languages[:10]))
-print('\nThe top ten languages in descending order are:')
-for count, language in top_ten_languages.items():
-    print(f'{language.title()}\t\t\t{count}')
->>>>>>> origin/main
 
 # 3
 population = {}
 for country in countries_data:
-<<<<<<< HEAD
     population[country['name']] = country['population']
 population = {v: k for k, v in population.items()}
-=======
-    population[country['population']] = country['name']
->>>>>>> origin/main
 population = sorted(population.items(), reverse=True)
 top_ten_populated = dict(population[:10])
 print('\nThe top ten most populated countries in descending order are:')
