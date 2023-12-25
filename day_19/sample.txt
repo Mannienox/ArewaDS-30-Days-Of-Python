@@ -1,0 +1,1 @@
+TXT files are simple text documents that often do not have any formatting and are in plain text, making them one of the most widely known and used document file types. .TXT files can be opened with any word processing and text editing programs, which are mostly pre-installed on the popular operating systems like macOS and Windows.
