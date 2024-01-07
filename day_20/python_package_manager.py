@@ -97,6 +97,7 @@ for x in set(country_code):
 
 
 # 3
+# i
 url = 'https://restcountries.com/v3.1/all'
 countries_data = requests.get(url).json()
 countries_data_list = []
@@ -107,3 +108,40 @@ print('Top 10 largest countries by area of land: ')
 for country in sorted(countries_data_list, reverse=True)[:10]:
     area, name = country
     print('\t',name,'\t\t\t',area)
+
+
+# ii
+languages = []
+count = 0
+for country in countries_data:
+    if 'languages' in country:
+        for language in country['languages'].values():
+            languages.append(language)
+    elif 'language' in country:
+        for language in country['language'].values():
+            languages.append(language)
+    else:
+        count = country['name']['common']
+print(count)
+language_count = []
+for language in set(languages):
+    language_count.append((languages.count(language), language))
+
+print('The 10 most spoken languages:  ')
+for language in sorted(language_count, reverse=True)[:10]:
+    count, lang = language
+    print('\t',lang,'\t\t\t',count)
+
+# iii
+print('The total number of languages in the languages api is', len(set(languages)))
+
+
+# iv
+url = 'https://archive.ics.uci.edu/datasets'
+from bs4 import BeautifulSoup
+from pprint import pprint
+
+site = requests.get(url).text
+print(site)
+my_list = []
+html = BeautifulSoup(site, 'html.parser')
